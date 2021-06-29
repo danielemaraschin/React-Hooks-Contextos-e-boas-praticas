@@ -4,7 +4,7 @@ import DadosPessoais from "./DadosPessoais";
 
 function FormularioCadastro({aoEnviar, validarCPF}) {
     return (
-   <DadosPessoais></DadosPessoais>
+   <DadosPessoais/>
   );
 }
 
