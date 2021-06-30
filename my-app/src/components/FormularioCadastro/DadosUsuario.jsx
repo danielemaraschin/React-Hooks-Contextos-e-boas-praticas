@@ -23,7 +23,7 @@ function DadosUsuario() {
                 margin="normal"
                 color="primary"
                 fullWidth>
-                Cadastrar
+                Finalizar Cadastro
             </Button>
         </form>
     )
