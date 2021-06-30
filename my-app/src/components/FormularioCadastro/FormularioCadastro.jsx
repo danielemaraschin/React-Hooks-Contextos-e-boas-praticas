@@ -8,7 +8,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
 
   function proximo(){ 
-    setEtapaAtual(EtapaAtual+1);
+    setEtapaAtual(etapaAtual+1);
   }
 
   function formularioAtual(etapa) {
