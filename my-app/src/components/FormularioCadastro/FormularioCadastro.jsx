@@ -10,7 +10,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
   function formularioAtual(etapa) {
     switch (etapa) {
       case 0:
-        return <DadosUsuario />
+        return <DadosUsuario aoEnviar={aoEnviar}/>
       case 1:
         return <DadosPessoais aoEnviar={aoEnviar} validarCPF={validarCPF} />
       case 2:
