@@ -37,8 +37,13 @@ function DadosEntrega() {
                 type="text"
                 variant="outlined"
                 margin="normal"
-              
             />
+            <Button type="submit"
+                variant="contained"
+                margin="normal"
+                color="primary">
+                Cadastrar
+            </Button>
 
         </form>
 

@@ -19,9 +19,10 @@ function DadosUsuario() {
                 fullWidth
             />
             <Button type="submit"
-                variant="outlined"
+                variant="contained"
                 margin="normal"
-                color="primary">
+                color="primary"
+                fullWidth>
                 Cadastrar
             </Button>
         </form>
