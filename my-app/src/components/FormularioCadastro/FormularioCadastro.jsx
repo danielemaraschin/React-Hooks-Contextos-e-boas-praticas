@@ -5,7 +5,11 @@ import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 
 function FormularioCadastro({ aoEnviar, validarCPF }) {
-  const [etapaAtual, setEtapaAtual] = useState(1);
+  const [etapaAtual, setEtapaAtual] = useState(0);
+
+  function proximo(){ 
+    setEtapaAtual(setEtapaAtual+1);
+  }
 
   function formularioAtual(etapa) {
     switch (etapa) {
