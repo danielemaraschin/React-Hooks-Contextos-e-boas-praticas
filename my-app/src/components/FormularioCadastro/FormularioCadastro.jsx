@@ -18,7 +18,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
       case 1:
         return <DadosPessoais aoEnviar={proximo} validarCPF={validarCPF} />
       case 2:
-        return <DadosEntrega />
+        return <DadosEntrega aoEnviar={aoEnviar}/>
       default:
         return <Typography>Erro ao selecionar formulário</Typography>
     }

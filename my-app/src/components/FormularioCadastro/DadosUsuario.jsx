@@ -10,6 +10,7 @@ function DadosUsuario({aoEnviar}) {
             <TextField id="email"
                 label="email"
                 type="email"
+                required
                 variant="outlined"
                 margin="normal"
                 fullWidth
@@ -17,6 +18,7 @@ function DadosUsuario({aoEnviar}) {
             <TextField id="senha"
                 label="senha"
                 type="password"
+                required
                 variant="outlined"
                 margin="normal"
                 fullWidth
