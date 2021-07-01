@@ -8,7 +8,10 @@ function DadosEntrega({aoEnviar}) {
     const [estado, setEstado] = useState("");
     const [cidade, setCidade] = useState("")
     return (
-        <form>
+        <form onSubmit={(event)=>{
+            event.preventDefault();
+            aoEnviar({endereco, cep, numero, estado, cidade});
+        }}>
             <TextField id="endereco"
                 label="Endereço"
                 type="text"

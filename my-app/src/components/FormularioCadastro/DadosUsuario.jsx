@@ -7,7 +7,7 @@ function DadosUsuario({aoEnviar}) {
     return (
         <form onSubmit={(event)=>{
             event.preventDefault();
-            aoEnviar();
+            aoEnviar({email, senha}); //estados desse form são o objeto email e senha
         }} > 
             <TextField 
             value={email}
