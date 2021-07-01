@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 
 function DadosEntrega({aoEnviar}) {
+    const [endereco, setEndereco]= useState("");
+    const [cep, setCep] = useState("");
+    const [numero, setNumero] = useState("");
+    const [estado, setEstado] = useState("");
+    const [cidade, setCidade] = useState("")
     return (
         <form>
             <TextField id="endereco"
@@ -25,7 +30,7 @@ function DadosEntrega({aoEnviar}) {
                 margin="normal"
               
             />
-            <TextField id="Estado"
+            <TextField id="estado"
                 label="Estado"
                 type="text"
                 variant="outlined"
