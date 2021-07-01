@@ -10,7 +10,8 @@ function DadosUsuario({aoEnviar}) {
             aoEnviar();
         }} > 
             <TextField 
-                value={email}
+            value={email}
+            onChange={(event)=> {setEmail}}
                 id="email"
                 label="email"
                 type="email"
