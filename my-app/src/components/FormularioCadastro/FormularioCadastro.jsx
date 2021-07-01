@@ -23,7 +23,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
 
   function coletarDados(dados){
     setDados({...dadosColetados, ...dados}) //spread opeator para nao jogar
-    // o objeto inteiro e sim cada atributo e jogar no objeto que está criando
+    // o objeto inteiro e sim cada atributo do dadosColetados no objeto que está criando
     console.log(dadosColetados);
     proximo();
   }
