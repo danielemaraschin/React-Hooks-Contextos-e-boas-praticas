@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
@@ -7,6 +7,9 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [dadosColetados, setDados] = useState({});//usestate recebe objeto vazio
 
+  useEffect(()=> {
+    console.log(dadosColetados);
+  })
 
   const formularios = [
     <DadosUsuario aoEnviar={coletarDados} />,
