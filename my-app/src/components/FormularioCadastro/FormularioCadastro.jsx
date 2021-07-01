@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
@@ -9,7 +9,7 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
   const [dadosColetados, setDados] = useState({});//usestate recebe objeto vazio
 
   useEffect(()=> {
-    if(etapaAtual === formularios.length){
+    if(etapaAtual === formularios.length-1){
       aoEnviar(dadosColetados);
     }
   })
