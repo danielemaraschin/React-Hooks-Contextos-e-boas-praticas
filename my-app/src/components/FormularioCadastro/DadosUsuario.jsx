@@ -20,7 +20,10 @@ function DadosUsuario({aoEnviar}) {
                 margin="normal"
                 fullWidth
             />
-            <TextField id="senha"
+            <TextField 
+            value={senha}
+            onChange={(event)=> {setSenha(event.target.value)}}
+                id="senha"
                 label="senha"
                 type="password"
                 required
