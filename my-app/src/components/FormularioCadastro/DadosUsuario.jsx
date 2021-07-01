@@ -9,7 +9,9 @@ function DadosUsuario({aoEnviar}) {
             event.preventDefault();
             aoEnviar();
         }} > 
-            <TextField id="email"
+            <TextField 
+                value={email}
+                id="email"
                 label="email"
                 type="email"
                 required
