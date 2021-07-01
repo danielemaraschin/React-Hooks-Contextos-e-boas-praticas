@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 
-function DadosUsuario({aoEnviar}) {
+function DadosUsuario({aoEnviar, validarSenha}) {
     const [email, setEmail] =useState("");
     const [senha, setSenha] = useState("");
     return (
