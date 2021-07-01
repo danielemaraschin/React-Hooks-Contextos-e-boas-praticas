@@ -11,7 +11,7 @@ function DadosUsuario({aoEnviar}) {
         }} > 
             <TextField 
             value={email}
-            onChange={(event)=> {setEmail}}
+            onChange={(event)=> {setEmail(event.target.value)}}
                 id="email"
                 label="email"
                 type="email"
