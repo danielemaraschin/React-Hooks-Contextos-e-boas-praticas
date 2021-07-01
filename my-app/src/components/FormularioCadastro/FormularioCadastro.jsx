@@ -5,7 +5,7 @@ import DadosEntrega from "./DadosEntrega";
 import { Typography, Stepper, Step, StepLabel } from "@material-ui/core"
 import { validarSenha } from "../../models/cadastro";
 
-function FormularioCadastro({ aoEnviar, validarCPF }) {
+function FormularioCadastro({ aoEnviar, validacoes }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [dadosColetados, setDados] = useState({});//usestate recebe objeto vazio
 
@@ -16,9 +16,9 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
   })
 
   const formularios = [
-    <DadosUsuario aoEnviar={coletarDados} validarSenha={validarSenha} />,
-    <DadosPessoais aoEnviar={coletarDados} validarCPF={validarCPF} />,
-    <DadosEntrega aoEnviar={coletarDados} />,
+    <DadosUsuario aoEnviar={coletarDados} validacoes={validacoes} />,
+    <DadosPessoais aoEnviar={coletarDados} validacoes={validacoes} />,
+    <DadosEntrega aoEnviar={coletarDados} validacoes={validacoes} />,
     <Typography variant="h5">Obrigada por se cadastrar conosco!</Typography>
   ];
 
