@@ -2,19 +2,23 @@ import React, { useEffect, useState } from "react";
 import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
+import { Typography } from "@material-ui/core"
 
 function FormularioCadastro({ aoEnviar, validarCPF }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [dadosColetados, setDados] = useState({});//usestate recebe objeto vazio
 
   useEffect(()=> {
-    console.log(dadosColetados);
+    if(etapaAtual === formularios.length){
+      aoEnviar(dadosColetados);
+    }
   })
 
   const formularios = [
     <DadosUsuario aoEnviar={coletarDados} />,
     <DadosPessoais aoEnviar={coletarDados} validarCPF={validarCPF} />,
-    <DadosEntrega aoEnviar={coletarDados} />
+    <DadosEntrega aoEnviar={coletarDados} />,
+    <Typography variant="h5">Obrigada por se cadastrar conosco!</Typography>
   ];
 
   function coletarDados(dados){
