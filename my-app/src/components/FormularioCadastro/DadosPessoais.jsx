@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
-function DadosPessoais({aoEnviar, validarCPF}) {
+function DadosPessoais({aoEnviar, vaildacoes}) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -52,6 +52,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
         id="CPF"
+        name="cpf" {//add name to do validation
         label="CPF"
         required
         variant="outlined"
