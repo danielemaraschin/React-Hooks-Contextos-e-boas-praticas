@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
-function DadosPessoais({aoEnviar, vaildacoes}) {
+function DadosPessoais({aoEnviar, validacoes}) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -10,8 +10,10 @@ function DadosPessoais({aoEnviar, vaildacoes}) {
   const [erros, setErros] = useState({cpf:{valido:true, texto:""}})
 
   function validarCampos(event){
-    const ehValido = validarCPF(cpf);
-    setErros({cpf:ehValido})
+    const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
+    const ehValido = validacoes[name](value);
+    const novoEstado = {...erros, name:ehValido}
+    setErros({novoEstado});
   }
 
   return (
@@ -55,7 +57,7 @@ function DadosPessoais({aoEnviar, vaildacoes}) {
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
         id="CPF"
-        name="cpf" {//add name to do validation
+        name="cpf" //add name to do validation
         label="CPF"
         required
         variant="outlined"
