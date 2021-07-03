@@ -11,6 +11,8 @@ class App extends Component {
       <Container component="article" maxWidth="sm">
         <Typography variant="h3" component="h1" align="center" >Formulário de cadastro</Typography>      {/*1{} CODE JS*/}
         <FormularioCadastro aoEnviar={aoEnviarForm} validacoes={{cpf:validarCPF, senha:validarSenha}}/> {/*2 {{}} OBJECT JS*/}
+                                                    { /*no campo cpf usa a function validar cpf; no campo senha usa validar*/}
+                                              
       </Container>                                                                                     
     );
   }
