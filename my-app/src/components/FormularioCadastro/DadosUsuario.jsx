@@ -27,6 +27,7 @@ function DadosUsuario({aoEnviar, validarSenha}) {
                 id="senha"
                 label="senha"
                 type="password"
+                name="senha"
                 required
                 variant="outlined"
                 margin="normal"
