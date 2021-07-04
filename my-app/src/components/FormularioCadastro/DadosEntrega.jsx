@@ -62,6 +62,7 @@ function DadosEntrega({aoEnviar}) {
                 id="cidade"
                 label="Cidade"
                 type="text"
+                name="cidade"
                 variant="outlined"
                 margin="normal"
             />
