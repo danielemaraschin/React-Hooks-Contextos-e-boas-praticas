@@ -14,6 +14,7 @@ function DadosUsuario({aoEnviar, validarSenha}) {
             onChange={(event)=> {setEmail(event.target.value)}}
                 id="email"
                 label="email"
+                name="email"
                 type="email"
                 required
                 variant="outlined"
