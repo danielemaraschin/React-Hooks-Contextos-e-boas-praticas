@@ -18,6 +18,7 @@ function DadosEntrega({aoEnviar}) {
             id="endereco"
                 label="Endereço"
                 type="text"
+                name="endereco"
                 variant="outlined"
                 margin="normal"
                 fullWidth
@@ -28,6 +29,7 @@ function DadosEntrega({aoEnviar}) {
                 id="cep"
                 label="CEP"
                 type="number"
+                
                 variant="outlined"
                 margin="normal"
                 fullWidth
