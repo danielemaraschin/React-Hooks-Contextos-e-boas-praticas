@@ -40,6 +40,7 @@ function DadosEntrega({aoEnviar}) {
                 id="numero"
                 label="Numero"
                 type="number"
+                name="numero"
                 variant="outlined"
                 margin="normal"
               
