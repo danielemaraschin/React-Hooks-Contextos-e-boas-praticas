@@ -51,6 +51,7 @@ function DadosEntrega({aoEnviar}) {
                 id="estado"
                 label="Estado"
                 type="text"
+                name="estado"
                 variant="outlined"
                 margin="normal"
                 fullWidth
