@@ -29,6 +29,7 @@ function DadosPessoais({aoEnviar, validacoes}) {
           setNome(event.target.value);
         }}
         id="nome"
+        name="nome"
         label="Nome"
         required
         variant="outlined"
