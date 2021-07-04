@@ -29,7 +29,7 @@ function DadosEntrega({aoEnviar}) {
                 id="cep"
                 label="CEP"
                 type="number"
-                
+                name="cep"
                 variant="outlined"
                 margin="normal"
                 fullWidth
