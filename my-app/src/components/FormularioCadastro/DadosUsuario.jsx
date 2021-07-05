@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 
-function DadosUsuario({aoEnviar, validarSenha}) {
+function DadosUsuario({aoEnviar, validacoes}) {
     const [email, setEmail] =useState("");
     const [senha, setSenha] = useState("");
+
+
+    function validarCampos(event){
+        const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
+        const ehValido = validacoes[name](value);
+        const novoEstado = {...erros, name:ehValido}
+        setErros({novoEstado});
+     
+
+
     return (
         <form onSubmit={(event)=>{
             event.preventDefault();
