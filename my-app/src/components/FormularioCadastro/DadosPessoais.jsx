@@ -7,12 +7,12 @@ function DadosPessoais({aoEnviar, validacoes}) {
   const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(false);
-  const [erros, setErros] = useState({cpf:{valido:true, texto:""}})
+  const [erros, setErros] = useState({cpf:{valido:true, texto:""}});
 
   function validarCampos(event){
     const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
-    const ehValido = validacoes[name](value);
-    const novoEstado = {...erros, name:ehValido}
+    const novoEstado = {...erros};
+    novoEstado[name] = validacoes[name](value);
     setErros({novoEstado});
   }
 
