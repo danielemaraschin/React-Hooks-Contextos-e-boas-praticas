@@ -36,6 +36,7 @@ function DadosUsuario({aoEnviar, validacoes}) {
             onChange={(event)=> {setSenha(event.target.value)}}
             onBlur={validarCampos}
             error={!erros.senha.valido}
+            helperText={erros.senha.texto}
                 id="senha"
                 label="senha"
                 type="password"
