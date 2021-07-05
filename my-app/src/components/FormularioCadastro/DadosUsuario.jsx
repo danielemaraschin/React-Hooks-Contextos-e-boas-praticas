@@ -34,6 +34,8 @@ function DadosUsuario({aoEnviar, validacoes}) {
             <TextField 
             value={senha}
             onChange={(event)=> {setSenha(event.target.value)}}
+            onBlur={validarCampos}
+            error={!erros.senha.valido}
                 id="senha"
                 label="senha"
                 type="password"
