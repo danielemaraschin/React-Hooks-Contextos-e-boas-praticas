@@ -3,6 +3,7 @@
     const{name, value} = event.target;
     const ehValido=  validacoes[name](value);
     const novoEstado = {...erros, name:ehValido};
+    novoEstado
     setErros({novoEstado});
   }
 
