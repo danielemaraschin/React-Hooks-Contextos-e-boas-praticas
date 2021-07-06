@@ -1,21 +1,35 @@
 import React, { useState } from "react";
 import { TextField, Button } from "@material-ui/core";
 
+
 function DadosUsuario({ aoEnviar, validacoes }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [erros, setErros] = useState({senha:{ valido:true, texto:""}});
+    const [erros, setErros] = useState({ senha: {valido:true, texto:""} });
 
     function validarCampos(event){
       const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
-      const novoEstado = {...erros};
+      const novoEstado = {...erros };
       novoEstado[name] = validacoes[name](value);
-      setErros({novoEstado});
+      setErros(novoEstado);
     }
+
+    function possoEnviar(){
+        for(let campo in erros){
+            if(!erros[campo].valido)
+            {
+            return false
+            }
+        }
+        return true;
+    }
+
         return (
             <form onSubmit={(event) => {
                 event.preventDefault();
-                aoEnviar({ email, senha }); //estados desse form são o objeto email e senha
+                if(possoEnviar()){
+                    aoEnviar({ email, senha }); //estados desse form são o objeto email e senha
+                }               
             }} >
                 <TextField
                     value={email}
@@ -31,7 +45,9 @@ function DadosUsuario({ aoEnviar, validacoes }) {
                 />
                 <TextField
                     value={senha}
-                    onChange={(event) => { setSenha(event.target.value); }}
+                    onChange={(event) => {
+                         setSenha(event.target.value); 
+                    }}
                     onBlur={validarCampos}
                     error={!erros.senha.valido}
                     helperText={erros.senha.texto}
@@ -49,7 +65,7 @@ function DadosUsuario({ aoEnviar, validacoes }) {
                     margin="normal"
                     color="primary"
                     fullWidth>
-                    Finalizar Cadastro
+                    Próximo
                 </Button>
             </form>
         );

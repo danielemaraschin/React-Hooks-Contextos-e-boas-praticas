@@ -70,7 +70,7 @@ function DadosEntrega({aoEnviar}) {
                 variant="contained"
                 margin="normal"
                 color="primary">
-                Cadastrar
+                Finalizar Cadastro
             </Button>
 
         </form>
