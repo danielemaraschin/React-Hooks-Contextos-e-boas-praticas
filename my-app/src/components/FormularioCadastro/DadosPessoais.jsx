@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
+import validacoesCadastro from "../../contexts/validacoesCadastro";
 
 function DadosPessoais({aoEnviar, validacoes}) {
   const [nome, setNome] = useState("");
@@ -8,6 +9,8 @@ function DadosPessoais({aoEnviar, validacoes}) {
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(false);
   const [erros, setErros] = useState({cpf:{valido:true, texto:""}, nome: {valido: true, texto: ""}});
+
+  useContext(validacoesCadastro)
 
   function validarCampos(event){
     const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
