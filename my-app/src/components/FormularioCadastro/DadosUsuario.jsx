@@ -2,12 +2,14 @@ import React, { useState, useContext } from "react";
 import { TextField, Button } from "@material-ui/core";
 import validacoesCadastro from "../../contexts/validacoesCadastro";
 
-const validacoes = useContext(validacoesCadastro)
 
 function DadosUsuario({ aoEnviar }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [erros, setErros] = useState({ senha: {valido:true, texto:""} });
+
+    
+    const validacoes = useContext(validacoesCadastro)
 
     function validarCampos(event){
       const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
