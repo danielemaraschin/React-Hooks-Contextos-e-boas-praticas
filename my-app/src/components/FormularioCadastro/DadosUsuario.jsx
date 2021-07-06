@@ -4,7 +4,7 @@ import { TextField, Button } from "@material-ui/core";
 function DadosUsuario({ aoEnviar, validacoes }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [erros, setErros] = useState({senha:{valido:true, texto:""}});
+    const [erros, setErros] = useState({senha:{ valido:true, texto:""}});
 
     function validarCampos(event){
       const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
@@ -31,7 +31,7 @@ function DadosUsuario({ aoEnviar, validacoes }) {
                 />
                 <TextField
                     value={senha}
-                    onChange={(event) => { setSenha(event.target.value) }}
+                    onChange={(event) => { setSenha(event.target.value); }}
                     onBlur={validarCampos}
                     error={!erros.senha.valido}
                     helperText={erros.senha.texto}
@@ -52,8 +52,8 @@ function DadosUsuario({ aoEnviar, validacoes }) {
                     Finalizar Cadastro
                 </Button>
             </form>
-        )
+        );
     }
-}
+
 
 export default DadosUsuario;
