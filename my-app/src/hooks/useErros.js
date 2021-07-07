@@ -12,13 +12,22 @@ function useErros(validacoes) {
         setErros(novoEstado);
     }
 
-    return[erros, validarCampos]; //retorna esse array c validarCampos e estado de erros (pq é oq quer usando esse hook useErros)
+    function possoEnviar() {
+        for (let campo in erros) {
+            if (!erros[campo].valido) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    return [erros, validarCampos]; //retorna esse array c validarCampos e estado de erros (pq é oq quer usando esse hook useErros)
 }
 
-function criarEstadoInicial(validacoes){
+function criarEstadoInicial(validacoes) {
     const estadoInicial = {}
-    for(let campo in validacoes){
-        estadoInicial[campo] = {valido:true, texto: ""}
+    for (let campo in validacoes) {
+        estadoInicial[campo] = { valido: true, texto: "" }
     }
     return estadoInicial;
 

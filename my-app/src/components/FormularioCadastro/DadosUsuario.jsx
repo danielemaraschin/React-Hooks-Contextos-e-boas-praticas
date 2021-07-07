@@ -11,7 +11,7 @@ function DadosUsuario({ aoEnviar }) {
     const [erros, validarCampos] = useErros(validacoes); 
     //useErros devolve a var de erros e a funcao validar campos (é o q esta no return desse hook)
     //
-    function possoEnviar(){
+
         for(let campo in erros){
             if(!erros[campo].valido)
             {
@@ -19,7 +19,6 @@ function DadosUsuario({ aoEnviar }) {
             }
         }
         return true;
-    }
 
         return (
             <form onSubmit={(event) => {
