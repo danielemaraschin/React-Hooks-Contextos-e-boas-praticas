@@ -8,16 +8,8 @@ function DadosUsuario({ aoEnviar }) {
     const [senha, setSenha] = useState("");
     const [erros, setErros] = useState({ senha: {valido:true, texto:""} });
 
-    
     const validacoes = useContext(validacoesCadastro)
-
-    function validarCampos(event){
-      const{name, value} = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
-      const novoEstado = {...erros };
-      novoEstado[name] = validacoes[name](value);
-      setErros(novoEstado);
-    }
-
+    
     function possoEnviar(){
         for(let campo in erros){
             if(!erros[campo].valido)
