@@ -4,6 +4,7 @@ import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import { Typography, Stepper, Step, StepLabel } from "@material-ui/core"
 import { validarSenha, validarCPF } from "../../models/cadastro";
+
 function FormularioCadastro({ aoEnviar }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [dadosColetados, setDados] = useState({});//usestate recebe objeto vazio

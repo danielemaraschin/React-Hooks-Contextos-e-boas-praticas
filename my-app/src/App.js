@@ -11,9 +11,7 @@ class App extends Component {
     return (
       <Container component="article" maxWidth="sm">
         <Typography variant="h3" component="h1" align="center" >Formulário de cadastro</Typography>    
-        <validacoesCadastro.Provider value={}>
         <FormularioCadastro aoEnviar={aoEnviarForm} />
-        </validacoesCadastro.Provider>
       </Container>                                                                                     
     );
   }
