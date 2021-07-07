@@ -12,16 +12,6 @@ function DadosPessoais({aoEnviar}) {
   const validacoes = useContext(validacoesCadastro)
   const [erros, validarCampos] = useErros(validacoes);
 
-  function possoEnviar(){
-    for(let campo in erros){
-        if(!erros[campo].valido)
-        {
-        return false
-        }
-    }
-    return true;
-}
-
   return (
     <form
       onSubmit={(event) => {
