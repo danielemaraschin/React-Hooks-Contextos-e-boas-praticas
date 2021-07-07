@@ -8,7 +8,7 @@ function DadosUsuario({ aoEnviar }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const validacoes = useContext(validacoesCadastro)
-    const [erros, validarCampos] = useErros(); 
+    const [erros, validarCampos] = useErros(validacoes); 
     //useErros devolve a var de erros e a funcao validar campos (é o q esta no return desse hook)
     //
     function possoEnviar(){

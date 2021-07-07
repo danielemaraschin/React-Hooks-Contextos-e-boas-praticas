@@ -1,6 +1,8 @@
 import React, { useState } from "react"; //importar o useState para poder usar esse hook
 
 function useErros(validacoes) {
+
+    const estadoInicial = criarEstadoInicial(validacoes);
     const [erros, setErros] = useState({ senha: {valido:true, texto:""} }); //essa funcao tem um estado do react que é um hook customizado
     //quero q qm use esse hook useErros tenha acesso à validarCampos e o estado erros
     function validarCampos(event) {
@@ -11,6 +13,15 @@ function useErros(validacoes) {
     }
 
     return[erros, validarCampos]; //retorna esse array c validarCampos e estado de erros (pq é oq quer usando esse hook useErros)
+}
+
+function criarEstadoInicial(validacoes){
+    const estadoInicial = {}
+    for(let campo in validacoes){
+        estadoInicial[campo] = {valido:true, texto: ""}
+    }
+    return estadoInicial;
+
 }
 
 export default useErros;
