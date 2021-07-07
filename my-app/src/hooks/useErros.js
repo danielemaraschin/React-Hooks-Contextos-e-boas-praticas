@@ -3,7 +3,7 @@ import React, { useState } from "react"; //importar o useState para poder usar e
 function useErros(validacoes) {
 
     const estadoInicial = criarEstadoInicial(validacoes);
-    const [erros, setErros] = useState({ senha: {valido:true, texto:""} }); //essa funcao tem um estado do react que é um hook customizado
+    const [erros, setErros] = useState(estadoInicial); //essa funcao tem um estado do react que é um hook customizado
     //quero q qm use esse hook useErros tenha acesso à validarCampos e o estado erros
     function validarCampos(event) {
         const { name, value } = event.target;//como estamos trabalhando com forms controlados, o value é obrigatoriamente o estado do target
