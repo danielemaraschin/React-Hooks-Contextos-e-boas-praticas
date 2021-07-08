@@ -10,7 +10,7 @@ function DadosPessoais({aoEnviar}) {
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(false);
   const validacoes = useContext(validacoesCadastro)
-  const [erros, validarCampos] = useErros(validacoes);
+  const [erros, validarCampos, possoEnviar] = useErros(validacoes);
 
   return (
     <form

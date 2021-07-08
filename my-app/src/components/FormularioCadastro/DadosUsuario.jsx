@@ -8,18 +8,9 @@ function DadosUsuario({ aoEnviar }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const validacoes = useContext(validacoesCadastro)
-    const [erros, validarCampos] = useErros(validacoes); 
+    const [erros, validarCampos, possoEnviar] = useErros(validacoes); 
     //useErros devolve a var de erros e a funcao validar campos (é o q esta no return desse hook)
     //
-
-        for(let campo in erros){
-            if(!erros[campo].valido)
-            {
-            return false
-            }
-        }
-        return true;
-
         return (
             <form onSubmit={(event) => {
                 event.preventDefault();

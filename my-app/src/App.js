@@ -18,7 +18,8 @@ class App extends Component {
     );
   }
 }
-
+//formularioCadastro so é uma máquina de renderização que a partir de sua mudança de estado (etapaAtual) 
+//define quando e quem deve mudar o estado (os outros formularios)
 function aoEnviarForm(dados){
   console.log(dados);
 }

@@ -21,7 +21,7 @@ function useErros(validacoes) {
         return true;
     }
 
-    return [erros, validarCampos]; //retorna esse array c validarCampos e estado de erros (pq é oq quer usando esse hook useErros)
+    return [erros, validarCampos, possoEnviar]; //retorna esse array c validarCampos e estado de erros (pq é oq quer usando esse hook useErros)
 }
 
 function criarEstadoInicial(validacoes) {
